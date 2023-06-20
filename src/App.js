@@ -3,29 +3,48 @@ import './App.css';
 // import About from './components/About';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
+import Alerts from './components/Alerts';
+
 import React ,{useState} from 'react'
 
 
 function App() {
   const [mode, setMode] = useState('light');
+  const [alert, setAlert] = useState(null);
+  const showAlert=(message, type)=>{
+    setAlert({
+      msg : message,
+      type : type,
+    },
+    setTimeout(() => {
+      setAlert(null)
+    }, 2000)
+    )
+  }
   const toggleMode=()=>{
         if(mode==='light'){
             setMode('dark');
             document.body.style.backgroundColor = 'black';
             document.body.style.color = 'white';
+            showAlert('Dark Mode Enabled Succesfully','success');
         }
         else{
             setMode('light');
             document.body.style.backgroundColor = 'white';
             document.body.style.color = 'black';
+            showAlert('Light Mode Enabled Succesfully','success');
         }
   }
   return (
     <>
         <Navbar title="Text-Utils" about="About" mode={mode} toggleMode={toggleMode}/>
+        <Alerts alert={alert}/>
         {/* <Navbar/> */}
-        <TextForm textTitle="Enter your text to analyze below " mode={mode}/>
+        <TextForm textTitle="Enter your text to analyze below " mode={mode} showAlert={showAlert}/>
+
         {/* <About/> */}
+        
+
     
     </>
   );
