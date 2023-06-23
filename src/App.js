@@ -1,11 +1,12 @@
 // import logo from './logo.svg';
 import './App.css';
-// import About from './components/About';
+import About from './components/About';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import Alerts from './components/Alerts';
 
 import React ,{useState} from 'react'
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 
 
 function App() {
@@ -80,12 +81,20 @@ function App() {
 
   return (
     <>
-        <Navbar title="Text-Utils" about="About" mode={mode} changeMode={changeMode} />
-        <Alerts alert={alert}/>
+        
+        
         {/* <Navbar/> */}
-        <TextForm textTitle="Enter your text to analyze below " mode={mode} showAlert={showAlert}/>
+        {/* <TextForm textTitle="Enter your text to analyze below " mode={mode} showAlert={showAlert}/> */}
 
         {/* <About/> */}
+    <Router>
+    <Navbar title="Text-Utils" about="About" mode={mode} changeMode={changeMode} />
+    <Alerts alert={alert}/>
+      <Routes>
+        <Route path="/" element={<TextForm />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </Router>
         
 
     
