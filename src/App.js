@@ -36,43 +36,43 @@ function App() {
         }
 
   }
-  // const changeMode=()=>{
+  const changeMode=(event , colour)=>{
+    if(colour === 'light'){
+      setMode('light');
+      document.body.style.backgroundColor = 'white';
+      document.body.style.color = 'black';
+      showAlert('Light Mode Enabled Succesfully','success');
+    }
+    if(colour === 'dark'){
+      setMode('dark');
+      document.body.style.backgroundColor = 'black';
+      document.body.style.color = 'white';
+      showAlert('Dark Mode Enabled Succesfully','success');
+    }
+    if(colour === 'red'){
+      setMode('danger');
+      document.body.style.backgroundColor = 'red';
+      document.body.style.color = 'white';
+      showAlert('Red Mode Enabled Succesfully','success');
+    }
+    if(colour === 'blue'){
+      setMode('primary');
+      document.body.style.backgroundColor = 'blue';
+      document.body.style.color = 'white';
+      showAlert('Blue Mode Enabled Succesfully','success');
+    }
+    if(colour === 'green'){
+      setMode('success');
+      document.body.style.backgroundColor = 'green';
+      document.body.style.color = 'white';
+      showAlert('Green Mode Enabled Succesfully','success');
+    }
+  }
 
-  // }
-      const light=()=>{
-            setMode('light');
-            document.body.style.backgroundColor = 'white';
-            document.body.style.color = 'black';
-            showAlert('Light Mode Enabled Succesfully','success');
-      }
-      const dark=()=>{
-        setMode('dark');
-        document.body.style.backgroundColor = 'black';
-        document.body.style.color = 'white';
-        showAlert('Dark Mode Enabled Succesfully','success');
-      }
-      const red=()=>{
-        setMode('danger');
-        document.body.style.backgroundColor = 'red';
-        document.body.style.color = 'white';
-        showAlert('Red Mode Enabled Succesfully','success');
-      }
-      const blue=()=>{
-        setMode('primary');
-        document.body.style.backgroundColor = 'blue';
-        document.body.style.color = 'white';
-        showAlert('Blue Mode Enabled Succesfully','success');
-      }
-      const green=()=>{
-        setMode('success');
-        document.body.style.backgroundColor = 'green';
-        document.body.style.color = 'white';
-        showAlert('Green Mode Enabled Succesfully','success');
-      }
 
   return (
     <>
-        <Navbar title="Text-Utils" about="About" mode={mode} toggleMode={toggleMode} light={light} dark={dark} blue={blue} green={green} red={red} />
+        <Navbar title="Text-Utils" about="About" mode={mode} changeMode={changeMode} />
         <Alerts alert={alert}/>
         {/* <Navbar/> */}
         <TextForm textTitle="Enter your text to analyze below " mode={mode} showAlert={showAlert}/>

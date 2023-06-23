@@ -25,11 +25,11 @@ export default function Navbar(props) {
             <label className={`form-check-label text-${props.mode==='light'?'dark':'light'} `} htmlFor="flexSwitchCheckDefault">Enable {props.mode==='light'?'dark':'light'} Mode</label>
         </div> */}
         <h5>Select Theme : </h5>
-        <button type="button" className="btn btn-light mx-2 border border-black rounded-pill border-2" onClick={props.light} value="light">Light</button>
-        <button type="button" className="btn btn-dark mx-2 border border-black rounded-pill border-2" onClick={props.dark}>Dark</button>
-        <button type="button" className="btn btn-primary mx-2 border border-black rounded-pill border-2" onClick={props.blue}>Blue</button>
-        <button type="button" className="btn btn-danger mx-2 border border-black rounded-pill border-2" onClick={props.red}>Red</button>
-        <button type="button" className="btn btn-success mx-2 border border-black rounded-pill border-2" onClick={props.green}>Green</button>
+        <button type="button" className="btn btn-light mx-2 border border-black rounded-pill border-2" onClick={event => props.changeMode(event , 'light')} value="light">Light</button>
+        <button type="button" className="btn btn-dark mx-2 border border-black rounded-pill border-2" onClick={event => props.changeMode(event , 'dark')}>Dark</button>
+        <button type="button" className="btn btn-primary mx-2 border border-black rounded-pill border-2" onClick={event => props.changeMode(event , 'blue')}>Blue</button>
+        <button type="button" className="btn btn-danger mx-2 border border-black rounded-pill border-2" onClick={event => props.changeMode(event , 'red')}>Red</button>
+        <button type="button" className="btn btn-success mx-2 border border-black rounded-pill border-2" onClick={event => props.changeMode(event , 'green')}>Green</button>
 
 
 
