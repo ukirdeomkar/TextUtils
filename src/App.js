@@ -91,7 +91,7 @@ function App() {
     <Navbar title="Text-Utils" about="About" mode={mode} changeMode={changeMode} />
     <Alerts alert={alert}/>
       <Routes>
-        <Route path="/" element={<TextForm />} />
+        <Route path="/" element={<TextForm textTitle="Enter your text to analyze below " mode={mode} showAlert={showAlert}/>} />
         <Route path="/about" element={<About />} />
       </Routes>
     </Router>
