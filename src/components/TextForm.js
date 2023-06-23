@@ -29,6 +29,17 @@ export default function TextForm(props) {
     const [text, setText] = useState('');
     const re = /[.!?]/;
     const numOfSentences = text.split(re);
+
+    let deafaultWordsCount = text.split(" ");
+    // console.log(deafaultWordsCount);
+    let newWordsCount = [];
+    for (const item of deafaultWordsCount) {
+      if (!item.trim()) {
+        continue;
+      }
+
+      newWordsCount.push(item);
+    }
     // text = "ener here " - Wrong way to change state
     // setText("123"); - Correct way to change state
   return (
@@ -48,7 +59,10 @@ export default function TextForm(props) {
         </div>
         <div className="container my-4">
           <h2>Your Text Summary</h2>
-          <p>{numOfSentences.length - 1} Sentences and {text.split(" ").length} Words and {text.length} Characters</p>
+          <p>
+            {numOfSentences.length - 1} Sentences and  
+           {/* {text.split(" ").length}  */} {newWordsCount.length}Words and 
+           {text.length} Characters</p>
           <p> Average time required to read this text : {(0.08 * text.split(" ").length).toFixed(2)} minutes</p>
         </div>
 
