@@ -21,21 +21,21 @@ function App() {
     }, 2000)
     )
   }
-  const toggleMode=()=>{
-        if(mode==='light' ){
-            setMode('dark');
-            document.body.style.backgroundColor = 'black';
-            document.body.style.color = 'white';
-            showAlert('Dark Mode Enabled Succesfully','success');
-        }
-        else{
-            setMode('light');
-            document.body.style.backgroundColor = 'white';
-            document.body.style.color = 'black';
-            showAlert('Light Mode Enabled Succesfully','success');
-        }
+  // const toggleMode=()=>{
+  //       if(mode==='light' ){
+  //           setMode('dark');
+  //           document.body.style.backgroundColor = 'black';
+  //           document.body.style.color = 'white';
+  //           showAlert('Dark Mode Enabled Succesfully','success');
+  //       }
+  //       else{
+  //           setMode('light');
+  //           document.body.style.backgroundColor = 'white';
+  //           document.body.style.color = 'black';
+  //           showAlert('Light Mode Enabled Succesfully','success');
+  //       }
 
-  }
+  // }
   const changeMode=(event , colour)=>{
     if(colour === 'light'){
       setMode('light');
@@ -48,6 +48,14 @@ function App() {
       document.body.style.backgroundColor = 'black';
       document.body.style.color = 'white';
       showAlert('Dark Mode Enabled Succesfully','success');
+      
+      document.title = 'TextUtils - Dark Mode';
+      // setInterval(() => {
+      //   document.title = 'Dark Mode';
+      // }, 1500);
+      // setInterval(() => {
+      //   document.title = 'Mode is Dark';
+      // }, 2000);
     }
     if(colour === 'red'){
       setMode('danger');
