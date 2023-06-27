@@ -94,11 +94,11 @@ function App() {
 
         {/* <About/> */}
     <Router>
-    <Navbar title="Text-Utils" about="About" mode={mode} changeMode={changeMode}  currentMode = {currentMode}/>
+    <Navbar title="Text-Utils" about='About' mode={mode} changeMode={changeMode}  currentMode = {currentMode}/>
     <Alerts alert={alert}/>
       <Routes>
         <Route path="/" element={<TextForm textTitle="Enter your text to analyze below " mode={mode} showAlert={showAlert}/>} />
-        <Route path="/about" element={<About />} />
+        <Route path="/about" element={<About  mode={mode} currentMode={currentMode} />} />
       </Routes>
     </Router>
         

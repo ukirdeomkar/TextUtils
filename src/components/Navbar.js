@@ -21,15 +21,15 @@ export default function Navbar(props) {
                 
             </li>
             <li className="nav-item dropdown ">
-            <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a className="nav-link dropdown-toggle" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 {props.currentMode} Theme
             </a>
             <ul className="dropdown-menu" style={{backgroundColor:'transparent'}}>
-                <li><a className="dropdown-item" onClick={event => props.changeMode(event , 'light')} style={{backgroundColor:'lightcyan' , color:'black'}}>Light</a></li>
-                <li><a className="dropdown-item" onClick={event => props.changeMode(event , 'dark')} style={{backgroundColor:'black' , color:'white'}}>Dark</a></li>
-                <li><a className="dropdown-item" onClick={event => props.changeMode(event , 'blue')} style={{backgroundColor:'blue' , color:'white'}}>Blue</a></li>
-                <li><a className="dropdown-item" onClick={event => props.changeMode(event , 'green')} style={{backgroundColor:'green' , color:'white'}}>Green</a></li>
-                <li><a className="dropdown-item" onClick={event => props.changeMode(event , 'red')} style={{backgroundColor:'red' , color:'white'}}>Red</a></li>
+                <li className="dropdown-item" onClick={event => props.changeMode(event , 'light')} style={{backgroundColor:'lightcyan' , color:'black'}}>Light</li>
+                <li className="dropdown-item" onClick={event => props.changeMode(event , 'dark')} style={{backgroundColor:'black' , color:'white'}}>Dark</li>
+                <li className="dropdown-item" onClick={event => props.changeMode(event , 'blue')} style={{backgroundColor:'blue' , color:'white'}}>Blue</li>
+                <li className="dropdown-item" onClick={event => props.changeMode(event , 'green')} style={{backgroundColor:'green' , color:'white'}}>Green</li>
+                <li className="dropdown-item" onClick={event => props.changeMode(event , 'red')} style={{backgroundColor:'red' , color:'white'}}>Red</li>
 
             </ul>
             </li>
