@@ -30,7 +30,7 @@ export default function TextForm(props) {
     const re = /[.!?]/;
     const numOfSentences = text.split(re);
 
-    let deafaultWordsCount = text.split(" ");
+    let deafaultWordsCount = text.split(/\s+/);
     // console.log(deafaultWordsCount);
     let newWordsCount = [];
     for (const item of deafaultWordsCount) {
@@ -50,10 +50,10 @@ export default function TextForm(props) {
             <h1>{props.textTitle}</h1>
             <textarea className="form-control" id="exampleFormControlTextarea1" style={{backgroundColor : props.mode==='dark'?'black':'white' , color : props.mode==='dark'?'white':'black'}} value={text} rows="8" onChange={handleOnChange}></textarea>
             </div>
-            <button className="btn btn-primary mx-2" onClick={handleOnUpClick}>Convert to UpperCase</button>
-            <button className="btn btn-primary mx-2" onClick={handleOnLowClick}>Convert to LowerCase</button>
+            <button className="btn btn-primary mx-2 my-2" onClick={handleOnUpClick}>Convert to UpperCase</button>
+            <button className="btn btn-primary mx-2 my-2" onClick={handleOnLowClick}>Convert to LowerCase</button>
 
-            <button className="btn btn-danger mx-2" onClick={handleOnClearClick}>Clear Text</button>
+            <button className="btn btn-danger mx-2 my-2" onClick={handleOnClearClick}>Clear Text</button>
 
 
         </div>
