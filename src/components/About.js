@@ -34,10 +34,11 @@ export default function About(props) {
     // }
 
 
-    let myStyle =  {backgroundColor:props.currentMode , color : props.mode}
+    let myStyle =  {backgroundColor:props.currentMode , color : props.mode=='light'?'black':'white'}
     if(props.currentMode === 'Dark'){
         myStyle = {backgroundColor:'black' , color : 'white'} 
     }
+
         
     
    
