@@ -11,6 +11,7 @@ import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState('light');
+  const [currentMode , setCurrentMode] = useState('Light');
   const [alert, setAlert] = useState(null);
   const showAlert=(message, type)=>{
     setAlert({
@@ -40,12 +41,14 @@ function App() {
   const changeMode=(event , colour)=>{
     if(colour === 'light'){
       setMode('light');
+      setCurrentMode('Light');
       document.body.style.backgroundColor = 'white';
       document.body.style.color = 'black';
       showAlert('Light Mode Enabled Succesfully','success');
     }
     if(colour === 'dark'){
       setMode('dark');
+      setCurrentMode('Dark');
       document.body.style.backgroundColor = 'black';
       document.body.style.color = 'white';
       showAlert('Dark Mode Enabled Succesfully','success');
@@ -60,18 +63,21 @@ function App() {
     }
     if(colour === 'red'){
       setMode('danger');
+      setCurrentMode('Red');
       document.body.style.backgroundColor = 'red';
       document.body.style.color = 'white';
       showAlert('Red Mode Enabled Succesfully','success');
     }
     if(colour === 'blue'){
       setMode('primary');
+      setCurrentMode('Blue');
       document.body.style.backgroundColor = 'blue';
       document.body.style.color = 'white';
       showAlert('Blue Mode Enabled Succesfully','success');
     }
     if(colour === 'green'){
       setMode('success');
+      setCurrentMode('Green');
       document.body.style.backgroundColor = 'green';
       document.body.style.color = 'white';
       showAlert('Green Mode Enabled Succesfully','success');
@@ -88,7 +94,7 @@ function App() {
 
         {/* <About/> */}
     <Router>
-    <Navbar title="Text-Utils" about="About" mode={mode} changeMode={changeMode} />
+    <Navbar title="Text-Utils" about="About" mode={mode} changeMode={changeMode}  currentMode = {currentMode}/>
     <Alerts alert={alert}/>
       <Routes>
         <Route path="/" element={<TextForm textTitle="Enter your text to analyze below " mode={mode} showAlert={showAlert}/>} />
